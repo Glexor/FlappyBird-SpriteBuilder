@@ -158,7 +158,7 @@
     // move and loop the bushes
     for(CCNode *bush in _bushes) {
         // Move the bush
-        bush.position = ccp(bush.position.x - (character.physicsBody.velocity.x * delta),bush.position.y);
+        bush.position = ccp(bush.position.x - (character.physicsBody.velocity.x * delta), bush.position.y);
         
         // If the left corner is one complete width off the screen
         // Move it to the right
@@ -179,7 +179,7 @@
         // If the left corner is one complete width off the screen
         // Move it to the left
         if (cloud.position.x <= (-1 *cloud.contentSize.width)){
-            cloud.position = ccp(cloud.position.x +2*cloud.contentSize.width, cloud.position.y);
+            cloud.position = ccp(cloud.position.x + 2 * cloud.contentSize.width, cloud.position.y);
         }
     }
     NSMutableArray *offScreenObstacles = nil;
