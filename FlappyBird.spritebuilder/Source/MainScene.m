@@ -156,32 +156,33 @@
     }
     
     // move and loop the bushes
-    for(CCNode *bush in _bushes) {
-        // Move the bush
-        bush.position = ccp(bush.position.x - (character.physicsBody.velocity.x * delta), bush.position.y);
+    for (CCNode *bush in _bushes) {
+        // move the bush
+        bush.position = ccp(bush.position.x -
+                            (character.physicsBody.velocity.x * delta), bush.position.y);
         
-        // If the left corner is one complete width off the screen
-        // Move it to the right
-        
-        if (bush.position.x <= (-1 *bush.contentSize.width)){
-            bush.position = ccp(bush.position.x + 2* bush.contentSize.width, bush.position.y);
+        // if the left corner is one complete width off the screen,
+        // move it to the right
+        if (bush.position.x <= (-1 * bush.contentSize.width)) {
+            bush.position = ccp(bush.position.x +
+                                2 * bush.contentSize.width, bush.position.y);
         }
-        
     }
     
     // move and loop the clouds
-    
-    for(CCNode *cloud in _clouds) {
+    for (CCNode *cloud in _clouds) {
+        // move the cloud
+        cloud.position = ccp(cloud.position.x -
+                             (character.physicsBody.velocity.x * delta), cloud.position.y);
         
-        // Move the clouds
-        cloud.position = ccp(cloud.position.x - (character.physicsBody.velocity.x *delta), cloud.position.y);
-        
-        // If the left corner is one complete width off the screen
-        // Move it to the left
-        if (cloud.position.x <= (-1 *cloud.contentSize.width)){
-            cloud.position = ccp(cloud.position.x + 2 * cloud.contentSize.width, cloud.position.y);
+        // if the left corner is one complete width off the screen,
+        // move it to the right
+        if (cloud.position.x <= (-1 * cloud.contentSize.width)) {
+            cloud.position = ccp(cloud.position.x +
+                                 2 * cloud.contentSize.width, cloud.position.y);
         }
     }
+    
     NSMutableArray *offScreenObstacles = nil;
     
     for (CCNode *obstacle in _obstacles) {
